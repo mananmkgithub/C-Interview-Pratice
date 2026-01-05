@@ -1,3 +1,4 @@
+ ------- C# Basics -------
 1)What Is C#.
 ->C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.
 ->C# is used to develop web apps, desktop apps, mobile apps, games and much more.
@@ -7,7 +8,7 @@
 When you assign a value type variable to another variable, a copy of the value is created.
 -Stored on the stack (mostly)
 -Each variable has its own copy of data
--Changes in one variable do not affect another
+-Changes in one variable do not affect another                  
 Examples:
 int
 float
@@ -20,7 +21,7 @@ enum
 
 ->Reference Types->Reference types store a reference (memory address) to the actual data, not the data itself.
 When you assign a reference type variable to another variable, both point to the same object in memory.
--Stored on the heap
+-Stored on the heap`
 -Variables share the same memory reference
 Examples:
 class
@@ -103,6 +104,39 @@ condition ? value_if_true : value_if_false;
    🔹 while Loop->Executes while the condition is true.
    🔹 do–while Loop->Executes at least once, then checks the condition.
    🔹 foreach Loop->Used to iterate over collections like arrays or lists.
+
+--Function & Methods
+1)What is Method Declaration & Invocation?
+--Method Declaration 
+-A method declaration defines a method by specifying its name, return type, parameters, and body.
+It tells the compiler what the method will do.
+--Method Invocation
+-A method invocation means calling or executing a method to perform its defined task.
+
+2)What is Method Overloading?
+-Method Overloading in C# means having multiple methods with the same name in the same class but with different parameters is called to Method Overloading.
+-The compiler decides which method to call based on the number, type, or order of parameters.
+
+3)What is User-Defined Function?
+-A user-defined function is a function created by the programmer to perform a specific task.
+It helps in reusing code, improving readability, and reducing repetition.
+-Types of User-Defined Functions
+  No parameter, no return value
+  With parameter, no return value
+  No parameter, with return value
+  With parameter, with return value
+
+4)What Call by Value & Call by Reference (ref, out, in)?
+-Call by Value → Copy of value
+ref → Reference (read & write)
+out → Output value
+in → Read-only reference
+
+5)What is Recursion?
+->Recursion is a programming technique in which a method calls itself to solve a problem.
+It continues until a base condition is met to stop the recursive calls.
+
+
 
 
 
