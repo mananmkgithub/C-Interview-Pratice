@@ -272,8 +272,129 @@ Nullable<int> marks = null;
 
 
 4)What is StringBuilder?
+->StringBuilder is a class in C# used to create and modify strings efficiently without creating new string objects every time.
+It is useful when string data changes frequently.
+
+using System.Text;
+StringBuilder sb = new StringBuilder();
+sb.Append("Hello");
+sb.Append(" ");
+sb.Append("World");
+Console.WriteLine(sb.ToString());
+->Common StringBuilder Methods
+Append()
+AppendLine()
+Insert()
+Remove()
+Replace()
+Clear()
+
+5)Constant (const) vs ReadOnly (readonly) in C#?
+->const (Constant)
+  A constant is a variable whose value is fixed at compile time and cannot be changed ever.
+->readonly
+  A readonly variable is a field whose value can be assigned only once, either at declaration time or inside a constructor, and cannot be modified afterward.
+
+6)What is C# Properties: Auto, Backed & Expression-Bodied?
+->Property (General)
+  A property in C# is a member that provides controlled access to a class field using get and set accessors.
+->Auto-Implemented Property
+  An auto property is a property where the compiler automatically creates the backing field.
+  It is used when no extra logic is needed in get/set.
+
+->Backed Property
+  A backed property (backing-field property) uses a private field to store the value and allows custom logic in get/set.
+
+->Expression-Bodied Property
+  An expression-bodied property is a short, concise syntax for properties that return a single expression.
+
+1️⃣ Auto-Implemented Property
+   Example
+   class Student
+   {
+    public int Age { get; set; }
+    }
+2️⃣ Backed Property (Private Field)
+    Example
+    class Student
+    {
+    private int _age;
+    public int Age
+    {
+        get { return _age; }
+        set
+        {
+            if (value > 0)
+                _age = value;
+        }
+     }
+    }
+3️⃣ Expression-Bodied Property
+class Student
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+
+    public string FullName => $"{FirstName} {LastName}";
+}
 
 
+7)Stack vs Heap Memory (C#)?
+| Feature      |  Stack Memory| Heap Memory            |
+| ------------ | ------------ | ---------------------- |
+| Storage      | Value types  | Reference types        |
+| Allocation   | Automatic    | Dynamic                |
+| Deallocation | Automatic    | Garbage Collector      |
+| Speed        | Fast         | Slower                 |
+| Size         | Limited      | Large                  |
+| Lifetime     | Method scope | Application controlled |
+| Access       | Direct       | Reference-based        |
 
+
+8)Boxing & Unboxing in C#?
+->Boxing is the process of converting a value type into a reference type (object).
+The value is wrapped inside an object and stored on the heap.
+
+-Unboxing is the process of extracting the value type from the object back into its original value type.
+
+9)Exception Handling in C# (try, catch, finally, throw)?
+->Exception handling in C# is a mechanism used to handle runtime errors gracefully so that the program does not crash and continues execution in a controlled manner.
+1️⃣ try Block-> The try block contains code that may cause an exception during program execution.
+2️⃣ catch Block->The catch block handles the exception thrown in the try block and allows the program to continue execution.
+3️⃣ finally Block->The finally block contains code that is always executed, whether an exception occurs or not.
+4️⃣ throw Keyword->The throw keyword is used to explicitly generate an exception in a program.
+
+10)Enum & Struct in C#?
+->An enum is a value type that is used to define a set of named constant values, which makes the code more readable and meaningful.
+Struct->A struct is a value type in C# used to group related variables of different data types into a single unit.
+
+Enum (Enumeration)
+enum Day
+{
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday
+}
+how to use
+Day today = Day.Monday;
+Struct
+struct Employee
+{
+    public int Id;
+    public string Name;
+}
+how to use
+Employee emp;
+emp.Id = 1;
+emp.Name = "Rahul";
+
+One-Line Summary
+Enum → Fixed named constants
+Struct → Small grouped data
+
+
+-----------------------------------------------Object-Oriented Programming(oop)-------------------------------------------------
 
 
