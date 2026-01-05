@@ -148,7 +148,25 @@ It is declared using the params keyword.
 -Purpose Flexibility & cleaner code.
 
 
----------------------------------------------Uaer Interaction --------------------------------------------------------
+---------------------------------------------User Interaction --------------------------------------------------------
+1)What is User Input (Console.ReadLine)?
+->User input in C# means taking data from the user at runtime.
+Console.ReadLine() is used to read a line of text entered by the user from the console.
+
+2)What is Output (Console.WriteLine)?
+->Console.WriteLine() is used to print text or values on the console and then move the cursor to the next line.
+
+3)What is Command Line Argument?
+->A command line argument is a value passed to a program when it starts running from the command prompt or terminal.
+In C#, command line arguments are received using the Main(string[] args) parameter.
+
+4)What is String Formatting & String Interpolation?
+->String formatting is a way to insert values into a string using placeholders like {0}, {1}, etc.
+->String interpolation is a modern and cleaner way to embed variables directly inside a string using $"".
+
+
+
+
 
 
 
