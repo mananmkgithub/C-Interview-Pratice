@@ -165,14 +165,113 @@ In C#, command line arguments are received using the Main(string[] args) paramet
 ->String interpolation is a modern and cleaner way to embed variables directly inside a string using $"".
 
 
+-------------------------------------------Language Essentials--------------------------------------------------------
+1)What is C# Keywords?
+->C# keywords are reserved words that have special meaning in the C# language.
+They are predefined by the compiler and cannot be used as variable, method, or class names.
+Common C# Keywords (Category Wise)
+🔸 Data Type Keywords
+int
+float
+double
+bool
+string
+char
+void
+🔸 Control Flow Keywords
+if
+else
+switch
+case
+for
+while
+do
+foreach
+break
+continue
+return
+🔸 Class & Object Keywords
+class
+struct
+interface
+enum
+new
+this
+base
+🔸 Access Modifiers
+public
+private
+protected
+internal
+🔸 Method & Parameter Keywords
+static
+virtual
+override
+abstract
+sealed
+ref
+out
+in
+params
+🔸 Exception Handling Keywords
+try
+catch
+finally
+throw
+
+2)What is Nullable Types in C#?
+->Nullable types in C# allow value types (like int, bool, DateTime) to store null values.
+They are useful when a variable may not have a value.
+
+Short Syntax (?)
+int? age = null;
+bool? isActive = true;
+
+Long Syntax
+Nullable<int> marks = null;
 
 
+3)What is String Operations in C#?
+->String operations in C# are methods and techniques used to manipulate strings, such as creating, modifying, comparing, searching, and formatting text data.
+  string first = "Hello";
+  string second = "World";
+  string result = first + " " + second;
+
+  string name = "Rahul";
+  Console.WriteLine(name.Length);   // 5
+
+  string text = "CSharp";
+  string part = text.Substring(1, 3);  // Sha
+
+  string msg = "Hello World";
+  string newMsg = msg.Replace("World", "C#");
+
+  string name = "Manan";
+  Console.WriteLine(name.ToUpper());
+  Console.WriteLine(name.ToLower());
+
+  string data = "  Hello  ";
+  Console.WriteLine(data.Trim());
+
+  string email = "test@gmail.com";
+
+  email.Contains("@");
+  email.StartsWith("test");
+  email.EndsWith(".com");
+
+  string line = "A,B,C";
+  string[] values = line.Split(',');
+
+  string a = "Hello";
+  string b = "hello";
+  bool equal = a.Equals(b, StringComparison.OrdinalIgnoreCase);
+
+  string name = "Rahul";
+  int age = 25
+  Console.WriteLine($"Name: {name}, Age: {age}");
 
 
-
-
-
-
+4)What is StringBuilder?
 
 
 
