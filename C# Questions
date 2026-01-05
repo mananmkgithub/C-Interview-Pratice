@@ -2,3 +2,58 @@
 ->C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.
 ->C# is used to develop web apps, desktop apps, mobile apps, games and much more.
 
+2)What is C# Data Types (Value & References type).
+->Value Types->Value types store the actual data directly in memory.
+When you assign a value type variable to another variable, a copy of the value is created.
+-Stored on the stack (mostly)
+-Each variable has its own copy of data
+-Changes in one variable do not affect another
+Examples:
+int
+float
+double
+decimal
+bool
+char
+struct
+enum
+
+->Reference Types->Reference types store a reference (memory address) to the actual data, not the data itself.
+When you assign a reference type variable to another variable, both point to the same object in memory.
+-Stored on the heap
+-Variables share the same memory reference
+Examples:
+class
+string
+array
+object
+interface
+delegate
+
+
+3)What is C# Literals?
+->In C#, a literal is a fixed value written directly in the source code.
+Literals represent constant values that do not change during program execution.
+Types of C# Literals
+Integer Literals
+Floating-Point Literals
+Character Literals
+String Literals
+Boolean Literals
+Null Literal
+
+4)What is Type Casting?
+->Type Casting is the process of explicitly converting one data type into another using a cast operator.
+  It is mainly used when data loss may occur.
+
+Type Conversion?
+-Implicit Conversion (Automatic)->int a = 10;
+double b = a;   // Implicit conversion
+-Explicit Conversion (Manual)->char ch = 'A';
+int ascii = ch;   // Implicit conversion
+
+
+
+
+
+
