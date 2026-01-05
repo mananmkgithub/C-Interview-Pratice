@@ -136,6 +136,18 @@ in → Read-only reference
 ->Recursion is a programming technique in which a method calls itself to solve a problem.
 It continues until a base condition is met to stop the recursive calls.
 
+6)What is Named & Optional Parameters?
+->Named parameters allow you to pass arguments to a method by specifying the parameter name, so the order of parameters does not matter.
+->Optional parameters are parameters that have default values.
+If no value is passed during method call, the default value is used automatically.
+
+7)What is Params Array?
+->A params array in C# allows a method to accept a variable number of arguments as a single parameter.
+It is declared using the params keyword.
+-Params Array Means Variable number of arguments.
+-Purpose Flexibility & cleaner code.
+
+
 
 
 
