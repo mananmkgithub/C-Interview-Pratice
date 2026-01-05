@@ -49,8 +49,64 @@ Null Literal
 Type Conversion?
 -Implicit Conversion (Automatic)->int a = 10;
 double b = a;   // Implicit conversion
--Explicit Conversion (Manual)->char ch = 'A';
-int ascii = ch;   // Implicit conversion
+-Explicit Conversion (Manual)->double x = 25.75;
+int y = (int)x;   // Explicit conversion
+
+
+4)What is C# Variable & Constant
+->A variable in C# is a named memory location used to store data that can change during program execution.
+Syntax->dataType variableName = value;
+->A constant in C# is a fixed value whose value cannot be changed once it is assigned.
+->Value cannot be modified
+  Declared using the const keyword
+  Must be assigned at declaration time
+Syntax->const dataType constantName = value;
+
+5)what is C# Operators?
+->1️⃣ Arithmetic Operators->Used to perform mathematical calculations.
+   | Operator | Meaning             | Example |
+| -------- | ------------------- | ------- |
+| `+`      | Addition            | `a + b` |
+| `-`      | Subtraction         | `a - b` |
+| `*`      | Multiplication      | `a * b` |
+| `/`      | Division            | `a / b` |
+| `%`      | Modulus (remainder) | `a % b` |
+
+2️⃣ Logical Operators->Used to combine conditions and return true or false.
+| Operator | Meaning     |   
+| -------- | ----------- | 
+| `&&`     | Logical AND |         
+| `||'     | Logical OR  |
+| `!`      | Logical NOT |   
+
+3️⃣ Bitwise Operators->Used to perform operations at the binary (bit) level.
+| Operator | Meaning     |            
+| -------- | ----------- | 
+| `&`      | Bitwise AND |            
+| `||`     |  Bitwise OR |
+| `^`      | Bitwise XOR |            
+| `~`      | Bitwise NOT |            
+| `<<`     | Left Shift  |            
+| `>>`     | Right Shift |            
+
+4️⃣ Ternary Operator->Used as a short form of if-else.
+condition ? value_if_true : value_if_false;
+
+6)C# Control Flow Statements
+-Control flow statements in C# are used to control the order in which program statements are executed based on conditions or repetition.
+1️⃣ if Statement->Executes code only when a condition is true.
+2️⃣ if–else Statement->Executes one block if the condition is true, otherwise executes the else block.
+3️⃣ else–if Ladder->Used to check multiple conditions.
+4️⃣ switch Statement->Used to select one option from many choices based on a value.
+5️⃣ Loops->Loops are used to repeat code multiple times.
+   🔹 for Loop->Used when the number of iterations is known.
+   🔹 while Loop->Executes while the condition is true.
+   🔹 do–while Loop->Executes at least once, then checks the condition.
+   🔹 foreach Loop->Used to iterate over collections like arrays or lists.
+
+
+
+
 
 
 
