@@ -1,4 +1,4 @@
- ------- C# Basics -------
+ ----------------------------------------- C# Basics -----------------------------------------
 1)What Is C#.
 ->C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.
 ->C# is used to develop web apps, desktop apps, mobile apps, games and much more.
@@ -105,7 +105,7 @@ condition ? value_if_true : value_if_false;
    🔹 do–while Loop->Executes at least once, then checks the condition.
    🔹 foreach Loop->Used to iterate over collections like arrays or lists.
 
---Function & Methods
+----------------------------------------------Function & Methods---------------------------------------------------
 1)What is Method Declaration & Invocation?
 --Method Declaration 
 -A method declaration defines a method by specifying its name, return type, parameters, and body.
@@ -148,6 +148,7 @@ It is declared using the params keyword.
 -Purpose Flexibility & cleaner code.
 
 
+---------------------------------------------Uaer Interaction --------------------------------------------------------
 
 
 
