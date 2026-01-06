@@ -469,7 +469,53 @@ In C#, hybrid inheritance is possible only using interfaces, not classes.
 
 
 6)What is Ploymorphism(Compile-time & RunTime)?
-->
+->Polymorphism means “many forms” — it allows a single function, method, or object to behave differently in different situations.
+It helps you reuse the same method name with different implementations
+In simple words:
+One name — many behaviors.
+Types of Polymorphism in C#
+1)Compile-time Polymorphism(Static Polymorphism)
+2)Runtime Polymorphism (Dynamic Polymorphism)
+
+Static Polymorphism (Compile-time Polymorphism)
+->When a method performs different tasks based on parameters (number or type), it is called Static Polymorphism or Method Overloading.
+It is resolved during compile time.
+Same method name, different parameters.
+
+->Runtime Polymorphism (also called Dynamic Polymorphism) occurs when a method in a base class is overridden in a derived class, and the method call is determined at runtime based on the object type.
+In simple words:
+The same method name behaves differently depending on the object that calls it.
+Runtime polymorphism is achieved through:
+Method Overriding
+Using the virtual and override keywords
+virtual keyword → Allows the base class method to be overridden.
+override keyword → Defines a new implementation in the derived class.
+Base class reference (Animal a) points to derived class objects (Dog, Cat).
+At runtime, CLR (Common Language Runtime) decides which Speak() to call.
+
+7)What is Abstract Classes & Methods?
+->data abstraction
+“Abstraction is the process of hiding the complex implementation details and showing only what is necessary.”
+In C#, it is achieved using abstract classes and interfaces.”
+Purpose of Abstraction
+✅ To reduce complexity of code
+✅ To improve security by hiding details
+✅ To focus on what an object does, not how it does it
+✅ Makes programs easier to understand and maintain
+
+interface
+An interface is a blueprint or contract that defines a set of methods and properties that a class must implement.
+It helps achieve abstraction and multiple inheritance in C#.
+| Feature              | Abstract Class                             | Interface                                 |
+| -------------------- | ------------------------------------------ | ----------------------------------------- |
+| **Contains**         | Abstract + Concrete methods                | Only abstract members                     |
+| **Access Modifiers** | Can use `public`, `private`, etc.          | All members are public                    |
+| **Inheritance**      | Supports single inheritance                | Supports multiple inheritance             |
+| **Usage**            | Used for shared base with default behavior | Used for defining common behavior (rules) |
+
+
+
+
 
 
 
