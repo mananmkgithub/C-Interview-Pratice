@@ -338,7 +338,6 @@ class Student
     public string FullName => $"{FirstName} {LastName}";
 }
 
-
 7)Stack vs Heap Memory (C#)?
 | Feature      |  Stack Memory| Heap Memory            |
 | ------------ | ------------ | ---------------------- |
@@ -395,6 +394,52 @@ Enum → Fixed named constants
 Struct → Small grouped data
 
 
------------------------------------------------Object-Oriented Programming(oop)-------------------------------------------------
+-----------------------------------------------Object-Oriented Programming(oop)------------------------------------------------
+1)What Is The Oops and difference Between Functional & Object Oritend Programming Langauge?
+->OOPs is a programming style where a program is built using objects that contain data and functions.
+->Object-oriented programming is a programming style where programs are created using classes and objects.
+OOPs 4 Pillars
+Encapsulation
+Abstraction
+Inheritance
+Polymorphism
+Functional programming is a programming style where programs are written using functions and data does not change.
+| Feature             | Functional Programming | Object-Oriented Programming |
+| ------------------- | ---------------------- | --------------------------- |
+| Focus               | Functions              | Objects                     |
+| Data                | Immutable              | Mutable                     |
+| State               | Avoids state           | Uses state                  |
+| Code style          | Declarative            | Imperative                  |
+| Reusability         | Function reuse         | Class & inheritance         |
+| Real-world modeling | Difficult              | Easy                        |
+| Examples            | F#, Haskell            | C#, Java                    |
+
+2)What Is Class & Objects?
+->class->A class is a blueprint or template that defines the properties (data/fields) and methods (behavior/functions) for objects.
+  It does not occupy memory until an object is created.
+  Think of it as a design or plan for an entity.
+
+->object->An object is a real-world instance of a class.
+  It contains actual data in memory.
+  Objects have state (properties) and behavior (methods) as defined in their class.
+
+3)What Is Constructor & Destructors?
+->A constructor is a special method in a class that is automatically called when an object is created.
+->It is used to initialize objects and set default values.
+->Constructor name must be the same as the class name.
+->No return type, not even void.
+Types Of Constructor
+Default Constructor->Called automatically when no constructor is defined.
+Parameterized Constructor->Allows passing values during object creation.
+Static Constructor->Used to initialize static members of the class. Called once automatically when the class is loaded.
+                    Cannot take parameters.
+Copy Constructor->A Copy Constructor is a constructor that creates a new object by copying the data of an existing object of the same class.
+C# does not provide a built-in copy constructor, but you can create your own.'
+
+this Keyword in C#->The this keyword in C# refers to the current instance of the class.
+
+Destuctors
+
+
 
 
