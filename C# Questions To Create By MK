@@ -439,7 +439,37 @@ C# does not provide a built-in copy constructor, but you can create your own.'
 this Keyword in C#->The this keyword in C# refers to the current instance of the class.
 
 Destuctors
+A destructor is a special method in C# that is used to release resources and clean up memory when an object is destroyed.
 
+4)What is Encapsulation?
+->Encapsulation is the process of hiding data inside a class and only allowing it to be accessed through public methods or properties.
+It is also known as data hiding.
+Purpose / Why we use Encapsulation
+To protect data from unauthorized access.
+To make the code secure and maintainable.
+To control how data is accessed or modified.
+To implement data hiding using access modifiers (private, public, etc.).
+
+5)What is Inheritance?
+->inheritance is an OOP concept in which one class (child/derived) can reuse and extend the properties and methods of another class (parent/base).
+It promotes:
+Code reusability
+Extensibility
+Polymorphism
+
+->Types Of Inheritance
+Single Inheritance->One derived class inherits from one base class is called single Inheritance.
+Multilevel Inheritance->A class inherits from another derived class (like a chain) is called Multilevel Inheritance.
+Hierarchical Inheritance->Multiple classes inherit from the same base class is called Hierarchical Inheritance.
+Multiple Inheritance (via Interface)
+In C#, a class cannot inherit from more than one class directly (to avoid ambiguity).
+But it can implement multiple interfaces.
+Hybrid Inheritance (via Interface)->combination of more than one type of inheritance (like hierarchical + multiple).
+In C#, hybrid inheritance is possible only using interfaces, not classes.
+
+
+6)What is Ploymorphism(Compile-time & RunTime)?
+->
 
 
 
