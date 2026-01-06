@@ -1,0 +1,49 @@
+1)What is Sql?
+->SQL (Structured Query Language) is a standard language used to store, retrieve, update, and manage data in a relational database.
+->MS SQL (Microsoft SQL Server)->MS SQL Server is a Relational Database Management System (RDBMS) developed by Microsoft.
+  It is used to store, manage, and retrieve data using the SQL (Structured Query Language).
+->MS SQL Server is software that allows users to:
+  Create and manage databases
+  Organize data in tables (rows and columns)
+  Perform operations like Insert, Update, Delete, and Select
+  Maintain data integrity, security, and performance
+  It is widely used in web applications, desktop apps, data analytics, and enterprise systems.
+
+2)SQL VS NO SQL Differences?
+->SQL (Structured Query Language) databases are relational databases that store data in tables (rows and columns) using a fixed schema.
+->NoSQL (Not Only SQL) databases are non-relational databases that store data in a flexible format such as documents, key-value pairs, graphs, or columns  without a fixed schema.
+| Feature        | SQL                 | NoSQL             |
+| -------------- | ------------------- | ----------------- |
+| Data Model     | Relational (Tables) | Non-relational    |
+| Schema         | Fixed schema        | Dynamic schema    |
+| Scalability    | Vertical            | Horizontal        |
+| Query Language | SQL                 | No standard query |
+| Relationships  | Supports joins      | No joins          |
+| Data Structure | Rows & columns      | JSON, key-value   |
+| Consistency    | ACID                | BASE              |
+| Examples       | MySQL, SQL Server   | MongoDB, Redis    |
+
+
+3)What is Acid Properties In Sql?
+->ACID properties are a set of rules that ensure reliable and safe database transactions.
+->ACID = Atomicity, Consistency, Isolation, Durability
+A – Atomicity->transaction is all or nothing.
+C – Consistency->Consistency ensures that the database remains in a valid state before and after a transaction.
+I – Isolation->Isolation ensures that multiple transactions do not affect each other.
+D – Durability->Durability ensures that once a transaction is committed, it is permanently saved, even after system failure.
+
+4)What is Importance of sql server in Modern?
+->SQL Server is a powerful database system used to store, manage, secure, and analyze data for modern applications and businesses.
+Why SQL Server is Important
+-Data Storage & Management
+-High Security
+-High Performance
+-Supports Modern Applications
+-Transaction Support (ACID)
+-Cloud & Hybrid Support
+
+
+5)UnderStanding Dbms vs Rdbms
+
+
+
