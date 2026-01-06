@@ -526,6 +526,173 @@ Security, performance, fixed behavior.
 10)What is Partital Classes?
 ->A partial class allows a single class to be split into multiple files, but all parts are combined into one class at compile time.
 
+11)What is Object Initializers?
+->An object initializer allows you to create and initialize an object in a single statement without calling a constructor explicitly.
+
+12)What is Access Modifier?
+->>Access modifiers in C# are keywords that define the visibility or accessibility of classes, methods, and members.
+They control which parts of a program can access a class or member.
+Help in data encapsulation and security.
+public->Member is accessible from anywhere 
+        Everywhere in the project or assembly.
+private->Member is accessible only within the class.
+         Inside the class only
+protected->Member is accessible within the class and derived classes.
+           Class + inheritance.
+internal->Member is accessible only within the same assembly.
+         Same project/assembly.
+protected internal->Member is accessible within the same assembly or derived class.
+                  ->Combination of protected & internal.
+
+13)what is Delegates & Events?
+->Delegates->Type of Delegate:-
+1) Single Cast Delegate:-We can call one delegate to one function
+2) Multicast Delegate:- We can \point one delegate to multiple functions address
+
+->Events->An event is a mechanism that allows a class to notify other classes when something happens, using delegates.
+
+14)What is Lambda Expressions?
+->A lambda expression is a short, anonymous function that is used to write inline logic without creating a separate method.
+Example Without Lambda
+int Add(int a, int b)
+{
+    return a + b;
+}
+Same Example Using Lambda
+Func<int, int, int> add = (a, b) => a + b;
+Console.WriteLine(add(2, 3));
+
+15)What is Anonymous Methods?
+->An anonymous method is a method without a name that is defined inline and assigned to a delegate.
+🔹 Example Without Anonymous Method
+delegate void MyDelegate(int x);
+
+static void Show(int x)
+{
+    Console.WriteLine(x);
+}
+MyDelegate d = Show;
+
+🔹 Same Example Using Anonymous Method
+delegate void MyDelegate(int x);
+MyDelegate d = delegate (int x)
+{
+    Console.WriteLine(x);
+};
+d(10);
+
+16)what is Func,Action,Predicate?
+->Func
+Func is a generic delegate that takes parameters and returns a value.
+->Action
+Action is a generic delegate that takes parameters but does NOT return any value.
+->Predicate
+Predicate is a generic delegate that takes one parameter and always returns a boolean (true/false).
+
+--------------------------------------------------------Collections & Generics --------------------------------------------------------------
+1)What is The Array(1D,2D,Jagged)
+->An array is a collection of same-type elements stored in continuous memory locations and accessed using an index.
+1D Array->A 1D array is an array that stores elements in a single linear sequence and is accessed using one index.
+2D Array->A 2D array is an array that stores data in rows and columns and is accessed using two indexes.
+Jagged Array->A jagged array is an array of arrays where each inner array can have a different size.
+| Feature   | 1D Array   | 2D Array           | Jagged Array         |
+| --------- | ---------- | ------------------ | -------------------- |
+| Structure | Linear     | Table              | Array of arrays      |
+| Size      | Fixed      | Fixed rows/columns | Flexible             |
+| Memory    | Continuous | Continuous         | Non-continuous       |
+| Use Case  | List       | Matrix             | Variable-length rows |
+
+
+2)What Is The NonGenric Collections?
+->“Collections are containers that store multiple objects and provide methods to add, remove, or access elements easily.”
+ Non-Generic Collections (Namespace: System.Collections)->Can store any type of object.
+->ArrayList->An ArrayList is a collection that stores elements of any type and manages the index automatically.
+Methods: Add(), Remove(), Insert(), Contains().
+
+->Hashtable->A Hashtable stores data in key-value pairs. Each value is accessed using a unique key.
+Key must be unique.
+Methods: Add(key, value), Remove(key), ContainsKey(key)
+
+->SortedList
+SortedList stores key-value pairs like Hashtable but automatically sorts elements in ascending order by key.
+Combines features of Array List + Hash table
+Can be generic or non-generic
+Methods: Add(), Remove(), ContainsKey()
+
+->>>Stack
+A Stack stores elements in LIFO (Last In First Out) order.
+The last item added is the first item retrieved.
+Methods: Push() (add), Pop() (remove and return), Peek() (view top)
+Both generic and non-generic stacks available.
+
+->Queue
+->A Queue stores elements in FIFO (First In First Out) order.
+The first item added is the first item retrieved.
+Methods: Enqueue() (add), Dequeue() (remove), Peek() (view first)
+Both generic and non-generic queues available
+
+3)What is Generic Collection?
+->Generic Collections in C# are collections that store elements of a specific data type, providing type safety, better performance, and code optimization.
+Types Generic Collections
+List<T>->List<T> is a strongly typed dynamic array that stores elements of a specific type and automatically increases its size as elements are added.
+Methods: Add(), Remove(), Sort(), Contains(), Count
+
+Dictionary<TKey, TValue>->A Dictionary<TKey, TValue> stores data as key-value pairs.
+Each key must be unique, and you can retrieve values using the key.
+Methods: Add(), Remove(), ContainsKey(), TryGetValue()
+
+HashSet<T>->A HashSet<T> stores unique elements and automatically removes duplicates.
+No duplicates allowed
+Unordered collection
+Methods: Add(), Remove(), Contains()
+
+Stack<T>->A Stack stores elements in LIFO (Last In First Out) order.
+The last item added is the first item retrieved.
+Methods: Push() (add), Pop() (remove and return), Peek() (view top)
+
+Queue<T>
+->A Queue stores elements in FIFO (First In First Out) order.
+The first item added is the first item retrieved.
+Methods: Enqueue() (add), Dequeue() (remove), Peek() (view first)
+
+
+4)IEnumerable Vs IEnumerator
+->IEnumerable
+  IEnumerable is an interface that provides a collection for iteration and returns an IEnumerator.
+
+->IEnumerator
+ IEnumerator is an interface that controls the iteration process over a collection.
+
+IEnumerable<int> numbers = new List<int> { 1, 2, 3 };
+IEnumerator<int> enumerator = numbers.GetEnumerator();
+while (enumerator.MoveNext())
+{
+    Console.WriteLine(enumerator.Current);
+}
+
+5)Yield return?
+->yield return is used to return elements one at a time from a method, without creating a full collection, while maintaining the method’s state.
+| return                 | yield return           |
+| ---------------------- | ---------------------- |
+| Returns once           | Returns multiple times |
+| Method ends            | Method pauses          |
+| Full collection needed | No collection needed   |
+
+
+IEnumerable<int> EvenNumbers(int max)
+ {
+       for (int i = 2; i <= max; i += 2)
+        {
+               yield return i;
+         }
+ }
+ foreach (int num in EvenNumbers(10))
+ {
+       Console.WriteLine(num);
+ }
+
+
+
 
 
 
