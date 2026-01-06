@@ -514,6 +514,19 @@ It helps achieve abstraction and multiple inheritance in C#.
 | **Usage**            | Used for shared base with default behavior | Used for defining common behavior (rules) |
 
 
+8)What is Sealed Classes?
+->A sealed class in C# is a class that cannot be inherited by any other class is called to Sealed Class.
+  Used for
+Security, performance, fixed behavior.
+
+9)What is Static Classes and Members?
+->A static class is a class that cannot be instantiated and contains only static members.
+->A static member (variable, method, property) belongs to the class itself, not to any object.
+
+10)What is Partital Classes?
+->A partial class allows a single class to be split into multiple files, but all parts are combined into one class at compile time.
+
+
 
 
 
