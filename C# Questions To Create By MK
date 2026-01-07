@@ -701,8 +701,6 @@ IEnumerable<int> EvenNumbers(int max)
 
 
 
-
-
-
+Dependency Injection is a design pattern that allows a class to receive its dependencies from external sources instead of creating them itself.
 
 
