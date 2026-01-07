@@ -692,9 +692,16 @@ IEnumerable<int> EvenNumbers(int max)
  }
 
 
+| Feature     | IQueryable          | IEnumerable |
+| ----------- | ------------------- | ----------- |
+| Execution   | Database side       | Memory side |
+| Data Fetch  | Required only       | All data    |
+| Performance | Better (large data) | Slower      |
+| Used With   | EF, LINQ to SQL     | Collections |
 
 
----------------------------------------------------------File Handling & Strems -----------------------------------------------------------------------
+
+
 
 
 
