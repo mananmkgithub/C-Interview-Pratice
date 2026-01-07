@@ -256,4 +256,101 @@ CROSS JOIN table2
 A table is joined with itself is Called Self Join.
 
 -------------------------------------------------------------------------------Sql Indexing----------------------------------------------------------------
+1)What is Indexing In Sql?
+->Indexing in SQL is a technique used to speed up data retrieval from a database table by creating a quick lookup structure.
+Create Index Indexname on table(name);
+Types of Indexes
+1️⃣ Clustered Index->Data physically sorted
+2️⃣ Non-Clustered Index->Separate structure
+
+2)Clustred vs Non Clustred Index
+| Feature          | Clustered Index          | Non-Clustered Index  |
+| ---------------- | ------------------------ | -------------------- |
+| Data Storage     | Physically sorted        | Separate structure   |
+| Number per table | Only ** 1 **             | **Multiple**         |
+| Speed            | Faster for range queries | Faster for search    |
+| Pointer          | Data itself              | Pointer to data      |
+| Primary Key      | By default clustered     | Non-clustered        |
+| Space            | Less extra space         | Requires extra space |
+--for example
+-- Clustered Index
+CREATE CLUSTERED INDEX idx_emp_id
+ON Employees(Id);
+
+-- Non-Clustered Index
+CREATE NONCLUSTERED INDEX idx_emp_name
+ON Employees(Name);
+
+3)What Is a Composite Index? (SQL Server).
+->A composite index is an index created on two or more columns of a table to improve query performance when those columns are used together in a query.
+CREATE INDEX idx_emp_dept_salary
+ON Employees(DepartmentId, Salary);
+
+4)What is Covering Index?
+->A covering index is an index that contains all the columns needed by a query, so SQL Server can return results directly from the index without accessing the table.
+
+ 5)Filtered Index & Indexed Views (SQL Server)
+->A filtered index is a non-clustered index created with a WHERE condition, so it stores only a subset of rows.
+->An indexed view is a view that has a unique clustered index.
+
+ 6)How To show All Indexes?
+ ->  EXEC sp_helpindex 'Table Name';
+
+------------------------------------SQL Server Functions-------------------------------------------------------------------------------------
+1)Aggregate Functions(Sum,Avg,Count,Max,Min)->
+The MAX() function in SQL is used to return the largest value from a specified column.
+The MIN() function in SQL is used to return the smallest value from a specified column.
+The SUM() function in SQL is used to calculate the total (sum) of all values in a specified numeric column.
+The AVG() function in SQL is used to calculate the average (mean) value of a numeric column.
+The COUNT() function in SQL is used to count the number of rows that match a specified condition.
+
+2)Sql Scalar Functions(LEN,GETDATE,ISNULL,CONVERT)
+->Scalar functions are SQL functions that return a single value for each input row.
+
+--------------------------------------------SQL Views-------------------------------------------------------------------------------------------
+1)What is System Views?
+->System Views are built-in SQL Server views that store metadata information about databases, tables, columns, indexes, users, and server objects.
+
+2)User-Defined Views (SQL Server)?
+->A User-Defined View is a virtual table created by the user using a SELECT query to simplify data access and improve security.
+CREATE VIEW vw_EmployeeDetails
+AS
+SELECT Id, Name, Salary
+FROM Employees;
+
+----------------------------------------------Sql Triggers------------------------------------------------------------
+A SQL Trigger is a special stored procedure that automatically executes when an INSERT, UPDATE, or DELETE operation occurs on a table or view.
+🔑 Types of Triggers
+1️⃣ DML Triggers
+Data change par fire hote hain
+AFTER Trigger
+INSTEAD OF Trigger
+2️⃣ DDL Triggers
+Schema changes par fire hote hain
+3️⃣ LOGON Triggers
+User login par fire hote hain
+BEFORE Trigger: Executes before a data modification happens.
+AFTER Trigger: Executes after the data modification is completed.
+
+INSTEAD OF->Change The Reason
+
+-------------------------------------------------Store Prcoedure--------------------------------------------
+A Stored Procedure in SQL is a precompiled collection of one or more SQL statements stored in the database.
+It can accept input parameters, perform operations, and return results.
+Stored procedures help reuse code, improve performance, and maintain security.
+
+CREATE PROCEDURE procedure_name
+    @parameter1 datatype,
+    @parameter2 datatype OUTPUT -- optional
+AS
+BEGIN
+    -- SQL statements
+END;
+
+Execution:
+
+EXEC GetEmployeesByDepartment 'IT';
+
+
+
 
