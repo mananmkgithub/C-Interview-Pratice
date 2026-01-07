@@ -44,6 +44,216 @@ Why SQL Server is Important
 
 
 5)UnderStanding Dbms vs Rdbms
-->
+-A DBMS is software used to store, manage, and retrieve data from a database.
+-An RDBMS is a type of DBMS that stores data in tables with rows and columns and maintains relationships between tables.
 
+6)Relational DataBase Concepts?
+->A Relational Database stores data in tables (relations) and connects those tables using keys.
+->Core Relational Database Concepts
+ -Table (Relation)
+ -Row (Tuple)
+ -Column (Attribute)
+ -Primary Key
+ -Foreign Key
+ -Relationship-One-to-One
+               One-to-Many
+               Many-to-Many
+ -Normalization
+ -Constraints
+
+------------------------------------------------------------------Sql Data Types & Contraints-------------------------------------------------------------
+1)Built in Data-types(Numeric,Datetime,int,Text etc)
+| Data Type      | Description                       |
+| -------------- | --------------------------------- |
+| `INT`          | Integer (whole number)            |
+| `VARCHAR(n)`   | String with max length `n`        |
+| `CHAR(n)`      | Fixed-length string               |
+| `DATE`         | Date value                        |
+| `DECIMAL(p,s)` | Decimal number (precision, scale) |
+| `BIT`          | Boolean (0 or 1)                  |
+
+2)User-Defined Datatypes?
+->A User-Defined Data Type (UDDT) is a custom data type created by the user based on an existing SQL Server data type to reuse and standardize data.
+CREATE TYPE PhoneNumber FROM varchar(10) NOT NULL;
+
+3)Null Vs Not Null
+->NULL
+NULL means no value / unknown value stored in a column.
+->Not Null
+->NOT NULL means a column must have a value and cannot be empty.
+
+4)What Is Constraints?
+->Constraints are rules applied to table columns to control the type and validity of data stored in a database.
+NULL
+NULL means no value / unknown value stored in a column.
+Not Null
+NOT NULL means a column must have a value and cannot be empty.
+UNIQUE Constraint
+The UNIQUE constraint ensures that all values in a column are different and no duplicate values are allowed.
+PRIMARY KEY Constraint
+The PRIMARY KEY constraint uniquely identifies each record in a table and cannot contain NULL or duplicate values.
+FOREIGN KEY Constraint
+The FOREIGN KEY constraint is used to link two tables together and ensures referential integrity between them.
+CHECK Constraint
+The CHECK constraint ensures that the values in a column satisfy a specific condition.
+DEFAULT Constraint
+The DEFAULT constraint assigns a default value to a column when no value is provided.
+
+----------------------------------------------------------------------Sql Commands----------------------------------------------------------------------------
+1)What is Sql Commands?
+->There Are The Five Types Of Commands
+1)DDL,2)DML,3)DQL,4)DCL,5)TCL
+| Type                                   | Purpose                   | Example                           |
+| -------------------------------------- | ------------------------- | --------------------------------- |
+| **DDL (Data Definition Language)**     | Define database structure | `CREATE`, `ALTER`, `DROP`         |
+| **DML (Data Manipulation Language)**   | Manage data inside tables | `INSERT`, `UPDATE`, `DELETE`      |
+| **DCL (Data Control Language)**        | Control user access       | `GRANT`, `REVOKE`                 |
+| **TCL (Transaction Control Language)** | Manage transactions       | `COMMIT`, `ROLLBACK`, `SAVEPOINT` |
+| **DQL (Data Query Language)**          | Retrieve data             | `SELECT`                          |
+
+------------------------------------------------------------------------Clauses----------------------------------------------------------------------------------
+1)Where Clause?
+->The WHERE clause is used to filter records and return only the rows that match a specific condition.
+Operators Used with WHERE
+| Operator | Use                 |
+| -------- | ------------------- |
+| =        | Equal               |
+| >        | Greater             |
+| <        | Less                |
+| >=       | Greater or equal    |
+| <=       | Less or equal       |
+| <> / !=  | Not equal           |
+| AND      | All conditions true |
+| OR       | Any condition true  |
+| IN       | Multiple values     |
+| BETWEEN  | Range               |
+| LIKE     | Pattern search      |
+| IS NULL  | Check null          |
+
+
+2)Order By Clause?
+->The ORDER BY clause is used to sort the result set in ascending or descending order.
+
+3)Group BY With Having?
+->The GROUP BY clause is used to group rows that have the same values and apply aggregate functions on each group.
+->HAVING->The HAVING clause is used to filter groups after grouping is done.
+  GROUP BY → Group data
+  HAVING → Filter grouped data
+
+4)Top Keyword?
+->The TOP keyword is used to limit the number of rows returned in the result set.
+
+5)Logical Operators(And,or,Not)
+->The AND operator in SQL is used to combine two or more conditions in a WHERE clause.
+It returns TRUE only if all the conditions separated by AND are true.
+If any one of the conditions is false, the result will be false.
+
+SQL OR OPERATOR
+The OR operator in SQL is used to combine two or more conditions in a WHERE clause.
+It returns TRUE if any one of the conditions separated by OR is true.
+If all conditions are false, then the result will be false.
+
+SQL NOT OPERATOR
+The NOT operator in SQL is used to negate a condition.
+It returns TRUE if the condition is FALSE, and FALSE if the condition is TRUE.
+Essentially, it reverses the result of a condition.
+
+
+SQL IN Operator
+The IN operator in SQL is used to check if a value matches any value in a list or subquery.
+It is a shorthand for multiple OR condition
+
+SQL NOT IN Operator
+The NOT IN operator in SQL is used to exclude values that match any value in a list or subquery.
+It returns TRUE if the value does not match any value in the list.
+
+SQL BETWEEN Operator
+The BETWEEN operator in SQL is used to filter the result set within a specific range.
+It selects values between two specified values, inclusive of the boundary values.
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+
+SQL NOT BETWEEN Operator
+The NOT BETWEEN operator in SQL is used to exclude values within a specific range.
+It returns TRUE for values outside the range.
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE column_name NOT BETWEEN value1 AND value2;
+
+
+SQL LIKE OPERATOR
+The LIKE operator in SQL is used to search for a specified pattern in a column.
+It is often used with wildcards to perform partial matches rather than exact matches.
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE column_name LIKE 'pattern';
+
+
+IsNull->ISNULL() is a SQL Server function used to replace NULL values with a specified value.
+
+-------------------------------------------------------------------------Sql Set Operators-----------------------------------------------------------------------
+SQL Set Operators are used to combine the results of two or more SELECT statements into a single result set.
+1️⃣ UNION
+Definition:
+Combines results of multiple SELECT queries and removes duplicate rows.
+
+2️⃣ UNION ALL
+Definition:
+Combines results of two SELECT queries and keeps duplicate rows.
+
+3️⃣ INTERSECT
+Definition:
+Returns only common rows from both SELECT queries.
+
+4️⃣ EXCEPT
+Definition:
+Returns rows that exist in the first SELECT but not in the second.
+
+
+----------------------------------------------------------------------------Sql Joins--------------------------------------------------------------------------------
+Sql Joins-SQL JOINs are used to combine data from two or more tables based on a related column between them.
+1️⃣ INNER JOIN
+Returns only the records that match in both tables.
+SELECT columns
+FROM table1
+INNER JOIN table2
+ON table1.column = table2.column;
+
+2️⃣ LEFT JOIN (LEFT OUTER JOIN)
+Returns all records from the left table and matching records from the right table.
+
+SELECT columns
+FROM table1
+LEFT JOIN table2
+ON table1.column = table2.column;
+
+3️⃣ RIGHT JOIN (RIGHT OUTER JOIN)
+Returns all records from the right table and matching records from the left table.
+
+SELECT columns
+FROM table1
+RIGHT JOIN table2
+ON table1.column = table2.column;
+
+4️⃣ FULL JOIN (FULL OUTER JOIN)
+Returns all records from both tables, matching or not.
+SELECT columns
+FROM table1
+FULL OUTER JOIN table2
+ON table1.column = table2.column;
+
+5️⃣ CROSS JOIN
+Returns the Cartesian product (every row of one table with every row of another).
+SELECT columns
+FROM table1
+CROSS JOIN table2
+
+6️⃣ SELF JOIN
+A table is joined with itself is Called Self Join.
+
+-------------------------------------------------------------------------------Sql Indexing----------------------------------------------------------------
 
