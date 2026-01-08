@@ -334,7 +334,7 @@ AFTER Trigger: Executes after the data modification is completed.
 
 INSTEAD OF->Change The Reason
 
--------------------------------------------------Store Prcoedure--------------------------------------------
+-------------------------------------------------Store Prcoedure---------------------------------------------------------------------------------------------------
 A Stored Procedure in SQL is a precompiled collection of one or more SQL statements stored in the database.
 It can accept input parameters, perform operations, and return results.
 Stored procedures help reuse code, improve performance, and maintain security.
