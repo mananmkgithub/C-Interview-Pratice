@@ -1,0 +1,438 @@
+using System.Security.Cryptography;
+
+namespace Questions
+{
+    internal class A1
+    {
+        internal int FindSecondLargestNumber(int[] ar)
+        {
+            //Using LINQ to find the second largest number
+            //int secondLargest = ar.Distinct().OrderByDescending(x => x).Skip(1).First();
+            //return secondLargest;
+
+            //Without using LINQ
+            int largest = int.MinValue;
+            int secondLargest = int.MinValue;
+            foreach (int num in ar)
+            {
+                if (num > largest)
+                {
+                    secondLargest = largest;
+                    largest = num;
+                }
+                else if (num > secondLargest && num < largest)
+                {
+                    secondLargest = num;
+                }
+            }
+            return secondLargest;
+        }
+        internal void PaindromeStr(string name)
+        {
+            string rev = "";
+            for (int i = name.Length - 1; i >= 0; i--)
+            {
+                rev += name[i];
+            }
+            if (name.Equals(rev))
+            {
+                Console.WriteLine($"{name} is a palindrome");
+            }
+            else
+            {
+                Console.WriteLine($"{name} is not a palindrome");
+            }
+        }
+        internal void PaindromeNumber(int number)
+        {
+            int originalNumber = number;
+            int revesedNumber = 0;
+            while (number > 0)
+            {
+                int digit = number % 10;  //last digit
+                revesedNumber = revesedNumber * 10 + digit;
+                number = number / 10; //remove last digit
+            }
+            if (originalNumber == revesedNumber)
+            {
+                Console.WriteLine($"{originalNumber} is a palindrome number");
+            }
+            else
+            {
+                Console.WriteLine($"{originalNumber} is not a palindrome number");
+            }
+        }
+
+        internal long FindFactorial(long number)
+        {
+            //Simpal Method
+            //int fac = 1;
+            //for(int i=1; i<=number; i++)
+            //{
+            //    fac = fac * i;
+            //}
+            //return fac;
+
+            //Recursion Method
+            if (number == 0 || number == 1)
+            {
+                return 1;
+            }
+            return number * FindFactorial(number - 1);
+        }
+
+        internal void FibonacciSeries(int n)
+        {
+            int a = 0, b = 1, c;
+            Console.WriteLine("Fibonacci Series:");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(a + " ");
+                c = a + b;
+                a = b;
+                b = c;
+            }
+        }
+
+        internal int FibonacciRecursion(int n)
+        {
+            if (n == 0)
+            {
+                return 0;
+            }
+            else if (n == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return FibonacciRecursion(n - 1) + FibonacciRecursion(n - 2);
+            }
+        }
+
+        internal void CheckPrimeNumber(int number)
+        {
+            bool isprime = true;
+            if (number <=1)
+            {
+                isprime = false;
+            }
+            else
+            {
+                for (int i = 2; i <= Math.Sqrt(number); i++)
+                {
+                    if (number % i == 0)
+                    {
+                        isprime = false;
+                        break;
+                    }
+                }
+            }
+            if (isprime)
+            {
+                Console.WriteLine($"{number} is a prime number");
+            }
+            else
+            {
+                Console.WriteLine($"{number} is not a prime number");
+            }
+        }
+
+        internal void ReverseString(string str)
+        {
+            //char[] charArray = str.ToCharArray();
+            //Array.Reverse(charArray);
+            //string reversedStr = new string(charArray);
+            //Console.WriteLine($"Reversed string: {reversedStr}");
+            // Custom Use
+            string rev = "";
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
+                rev = rev + str[i];
+            }
+            Console.WriteLine($"Reversed string: {rev}");
+        }
+
+        internal void CountVowelsConsonants(string str)
+        {
+            int vowels = 0;
+            int consonants = 0;
+            foreach (char ch in str)
+            {
+                if (char.IsLetter(ch)) 
+                {
+                    char lowerCh = char.ToLower(ch);
+
+                    if (lowerCh == 'a' || lowerCh == 'e' || lowerCh == 'i' || lowerCh == 'o' || lowerCh == 'u')
+                        vowels++;
+                    else
+                        consonants++;
+                }
+            }
+            Console.WriteLine("Total Vowels: " + vowels);
+            Console.WriteLine("Total Consonants: " + consonants);
+        }
+
+        internal void SwapNumber(int num1, int num2)
+        {
+            Console.WriteLine($"Before swap: num 1 = {num1}, num2 = {num2}");
+            int temp = num1;
+            num1 = num2;
+            num2 = temp;
+            Console.WriteLine($"After swap: num1 = {num1}, num2 = {num2}");
+        }
+
+        internal void SwapNumberWithoutThirdVariable(int num1, int num2)
+        {
+            Console.WriteLine($"Before swap: num 1 = {num1}, num2 = {num2}");
+            num1 = num1 + num2;
+            num2 = num1 - num2;
+            num1 = num1 - num2;
+            Console.WriteLine($"After swap: num1 = {num1}, num2 = {num2}");
+        }
+        internal void CheckArmStrongNumber(int number)
+        {
+            int originalNum = number;
+            int sum = 0;
+            int digits = number.ToString().Length;
+            while (number > 0)
+            {
+                int digit = number % 10;
+                sum = sum + (int)Math.Pow(digit, digits);
+                number = number / 10;
+            }
+            if (sum == originalNum)
+                Console.WriteLine($"{originalNum} is an Armstrong Number");
+            else
+                Console.WriteLine($"{originalNum} is NOT an Armstrong Number");
+        }
+
+        internal void FindDuplicateElemenetsInArray(int[] ar)
+        {
+            HashSet<int> seen = new HashSet<int>();
+            HashSet<int> duplicate = new HashSet<int>();
+            foreach (int num in ar)
+            {
+                if (!seen.Add(num))
+                {
+                    duplicate.Add(num);
+                }
+            }
+            Console.WriteLine("Duplicate elements: " + string.Join(", ", duplicate));
+            Console.WriteLine("Unique elements: " + string.Join(", ", seen));
+        }
+        internal void FindMissingNumber(int[] ar)
+        {
+            int n = ar.Length + 1;
+            int totalSum = n * (n + 1) / 2;
+            int arrSum = 0;
+            foreach (int num in ar)
+                arrSum += num;
+
+            int missing = totalSum - arrSum;
+            Console.WriteLine("Missing number is: " + missing);
+        }
+
+        internal void ReverseArray(int[] ar)
+        {
+            Console.WriteLine("Original Array: " + string.Join(", ", ar));
+            Array.Reverse(ar);
+            Console.WriteLine("Revered Array: " + string.Join(", ", ar));
+        }
+
+        internal void CheckEvenorOdd(int num)
+        {
+            if (num % 2 == 0)
+            {
+                Console.WriteLine("Even Number:" + num);
+            }
+            else
+            {
+                Console.WriteLine("Odd Number:" + num);
+            }
+        }
+        internal void SeparateArrayEvenOrOdd(int[] ar)
+        {
+            List<int> even = new List<int>();
+            List<int> odd = new List<int>();
+            foreach (int i in ar)
+            {
+                if (i % 2 == 0)
+                {
+                    even.Add(i);
+                }
+                else
+                {
+                    odd.Add(i);
+                }
+            }
+            Console.WriteLine("Even numbers: " + string.Join(", ", even));
+            Console.WriteLine("Odd numbers: " + string.Join(", ", odd));
+        }
+
+
+        internal void ArrayOfSum(int[] ar)
+        {
+            List<int> ArraySumlist= new List<int>();
+            int sum = 0;
+            foreach(int i in ar)
+            {
+                sum = sum + i;
+                ArraySumlist.Add(sum);
+            }
+            Console.WriteLine("Array Of Element Sum list:"+string.Join(",",ArraySumlist));
+            Console.WriteLine("Sum OF ArrrayAllElements:" + sum);
+        }
+        internal void LargestandSmallestElementInArray(int[] ar)
+        {
+            int Largest = ar[0];
+            int Smallest = ar[0];
+            foreach (int num in ar)
+            {
+                if (num > Largest)
+                {
+                    Largest = num;
+                }
+                if (num < Smallest)
+                {
+                    Smallest = num;
+                }
+            }
+            Console.WriteLine("Largest number: " + Largest);
+            Console.WriteLine("Smallest number: " + Smallest);
+        }
+
+        internal void CheckLeapYear(int year)
+        {
+            // Built In Method
+            //if (DateTime.IsLeapYear(year))
+            //{
+            //    Console.WriteLine(year + " is a Leap Year");
+            //}
+            //else
+            //{
+            //    Console.WriteLine(year + " is NOT a Leap Year");
+            //}
+            bool isleapyear = false;
+            if(year%4 == 0)
+            {
+                if(year%100 == 0)
+                {
+                    if (year % 400 == 0)
+                        isleapyear = true;
+                    else
+                        isleapyear = false;
+                }
+                else
+                {
+                    isleapyear= true;
+                }
+            }
+            else
+            {
+                isleapyear = false;
+            }
+
+            if (isleapyear)
+                Console.WriteLine(year + " is a Leap Year");
+            else
+                Console.WriteLine(year + " is NOT a Leap Year");
+        }
+
+        internal void CountWords(string str)
+        {
+            int count = 0;
+            foreach(char ch in str)
+            {
+                count++;
+            }
+            Console.WriteLine("Word:" + str);
+            Console.WriteLine( "Count Words:"+count);
+        }
+
+        internal void TwoMatrix()
+        {
+            int[,] A = { { 1, 2 }, { 3, 4 } };
+            int[,] B = { { 5, 6 }, { 7, 8 } };
+            int[,] C = new int[2, 2];
+            // Matrix addition
+            for(int i=0; i<2; i++)
+            {
+                for(int j=0; j<2; j++)
+                {
+                    C[i,j]=A[i,j] + B[i,j];
+                }
+            }
+            Console.WriteLine("Result (A + B):");
+            for(int i=0; i<2; i++)
+            {
+                for(int j=0; j<2; j++)
+                {
+                    Console.Write(C[i,j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        internal void ThreeMatrix()
+        {
+            int[,] A =
+            {
+                { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
+            };
+            int[,] B =
+            {
+               { 9, 8, 7 },
+               { 6, 5, 4 },
+               { 3, 2, 1 }
+            };
+            int[,] C = new int[3, 3];
+            for(int i=0; i<3; i++)
+            {
+                for(int j=0; j<3; j++)
+                {
+                    C[i,j]= A[i,j] + B[i,j];
+                }
+            }
+            Console.WriteLine("Result (A + B):");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(C[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        internal void TrasposeMatrix()
+        {
+            int[,] A =
+            {
+               { 1, 2, 3 },
+               { 4, 5, 6 },
+               { 7, 8, 9 }
+            };
+            int size = 3;
+            int[,] Transpose = new int[size, size];
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    Transpose[j, i] = A[i, j];
+                }
+            }
+            Console.WriteLine("Transpose of Matrix A:");
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    Console.Write(Transpose[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
